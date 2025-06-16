@@ -1,0 +1,1100 @@
+@import 'tailwindcss';
+#root {
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+  text-align: initial;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.kanban-scrollbar {
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: block;
+}
+
+.kanban-board-row {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: max-content;
+  min-width: 100vw;
+  padding: 2rem 1rem;
+}
+
+.kanban-column {
+  background: #f3f4f6;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px 0 #0001;
+  border: 1.5px solid #e0e7ef;
+  padding: 1rem;
+  min-width: 300px;
+  flex: 1 1 0;
+  transition: border 0.2s;
+  height: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+}
+.kanban-column.is-over {
+  border: 2.5px solid #3b82f6;
+  background: #e0e7ef;
+}
+
+.pedido-card {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 4px 0 #0001;
+  border: 1.5px solid #e0e7ef;
+  color: #2563eb;
+  font-weight: 500;
+  transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+  padding: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+}
+.pedido-card:hover {
+  background: #f3f6fa;
+  color: #1d4ed8;
+  box-shadow: 0 2px 8px 0 #3b82f633;
+}
+.pedido-card.dragging {
+  opacity: 0.5;
+  box-shadow: 0 0 0 2px #3b82f6, 0 2px 8px 0 #3b82f633;
+  z-index: 50;
+  position: relative;
+}
+
+.pedido-card.dnd-kit-drag-overlay {
+  opacity: 0.7;
+  box-shadow: 0 0 0 3px #2563eb, 0 4px 16px 0 #3b82f699;
+  background: #e0e7ef;
+  z-index: 100;
+}
+
+.navbar-geraldo {
+  background: #fff;
+  border-bottom: 2px solid #e0e7ef;
+  box-shadow: 0 2px 8px 0 #0001;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 64px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+}
+.navbar-geraldo-content {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 0 2rem;
+}
+.navbar-geraldo-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 0;
+}
+.navbar-geraldo-avatar {
+  background: #fff;
+  border: none;
+  box-shadow: 0 2px 8px 0 #3b82f633;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navbar-geraldo-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #2563eb;
+  line-height: 1.1;
+  text-shadow: none;
+}
+.navbar-geraldo-sub {
+  font-size: 0.9rem;
+  color: #60a5fa;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-shadow: none;
+}
+.navbar-geraldo-user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.navbar-geraldo-user span {
+  color: #2563eb;
+  font-weight: 500;
+  opacity: 0.8;
+}
+.navbar-geraldo-btn {
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  font-weight: 600;
+  box-shadow: 0 2px 8px 0 #3b82f633;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+.navbar-geraldo-btn:hover {
+  background: #2563eb;
+}
+
+.navbar-sidebar-toggle {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 1.2rem;
+  transition: color 0.2s;
+  align-self: center;
+}
+.navbar-sidebar-toggle:hover {
+  color: #3b82f6;
+}
+
+body, .min-h-screen {
+  background: #f3f6fa !important;
+}
+
+/* Dark mode styles - VERSÃO COMPLETA E FUNCIONAL */
+
+/* Modo claro por padrão - cores bem definidas */
+html, body {
+  background-color: #f9fafb !important;
+  color: #111827 !important;
+}
+
+.bg-gray-50 {
+  background-color: #f9fafb !important;
+  color: #111827 !important;
+}
+
+.bg-white {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+}
+
+.text-blue-700 {
+  color: #1d4ed8 !important;
+}
+
+.text-blue-400 {
+  color: #3b82f6 !important;
+}
+
+.text-gray-900 {
+  color: #111827 !important;
+}
+
+.text-gray-700 {
+  color: #374151 !important;
+}
+
+.text-gray-500 {
+  color: #6b7280 !important;
+}
+
+.text-gray-400 {
+  color: #9ca3af !important;
+}
+
+.text-gray-100 {
+  color: #f3f4f6 !important;
+}
+
+.border-gray-200 {
+  border-color: #e5e7eb !important;
+}
+
+.border-gray-600 {
+  border-color: #4b5563 !important;
+}
+
+.border-gray-700 {
+  border-color: #374151 !important;
+}
+
+.bg-gray-700 {
+  background-color: #374151 !important;
+  color: #f3f4f6 !important;
+}
+
+.bg-gray-800 {
+  background-color: #1f2937 !important;
+  color: #424242 !important;
+}
+
+.bg-blue-50 {
+  background-color: #eff6ff !important;
+  color: #1d4ed8 !important;
+}
+
+.bg-blue-600 {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+}
+
+.bg-blue-700 {
+  background-color: #1d4ed8 !important;
+  color: #ffffff !important;
+}
+
+/* Cores específicas para cards de relatório no modo claro */
+.bg-blue-100 {
+  background-color: #dbeafe !important;
+  color: #1e40af !important;
+}
+
+.bg-green-100 {
+  background-color: #dcfce7 !important;
+  color: #166534 !important;
+}
+
+.bg-red-100 {
+  background-color: #fee2e2 !important;
+  color: #991b1b !important;
+}
+
+.bg-yellow-100 {
+  background-color: #fef3c7 !important;
+  color: #92400e !important;
+}
+
+.text-green-700 {
+  color: #15803d !important;
+}
+
+.text-red-700 {
+  color: #b91c1c !important;
+}
+
+.text-yellow-700 {
+  color: #a16207 !important;
+}
+
+.text-purple-700 {
+  color: #7B1FA2 !important;
+}
+
+/* MODO ESCURO - Aplicar APENAS quando .dark está presente */
+html.dark, html.dark body {
+  background-color: #0f172a !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark .bg-gray-50 {
+  background-color: #0f172a !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark .bg-white {
+  background-color: #1e293b !important;
+  color: #e2e8f0 !important;
+}
+
+html.dark .text-blue-700 {
+  color: #60a5fa !important;
+}
+
+html.dark .text-blue-400 {
+  color: #60a5fa !important;
+}
+
+html.dark .text-gray-900,
+html.dark .text-gray-800,
+html.dark .text-gray-700 {
+  color: #e2e8f0 !important;
+}
+
+html.dark .text-gray-500,
+html.dark .text-gray-400 {
+  color: #94a3b8 !important;
+}
+
+html.dark .text-gray-100 {
+  color: #f3f4f6 !important;
+}
+
+html.dark .border-gray-200 {
+  border-color: #4b5563 !important;
+}
+
+html.dark .border-gray-600 {
+  border-color: #4b5563 !important;
+}
+
+html.dark .border-gray-700 {
+  border-color: #374151 !important;
+}
+
+html.dark .bg-gray-700 {
+  background-color: #374151 !important;
+  color: #f3f4f6 !important;
+}
+
+html.dark .bg-gray-800 {
+  background-color: #1f2937 !important;
+  color: #424242 !important;
+}
+
+html.dark .bg-blue-50 {
+  background-color: rgba(59, 130, 246, 0.1) !important;
+  color: #93c5fd !important;
+}
+
+html.dark .bg-blue-600 {
+  background-color: #2563eb !important;
+  color: #ffffff !important;
+}
+
+html.dark .bg-blue-700 {
+  background-color: #1d4ed8 !important;
+  color: #ffffff !important;
+}
+
+/* Cards de relatório no modo escuro */
+html.dark .bg-blue-100 {
+  background-color: rgba(59, 130, 246, 0.2) !important;
+  color: #93c5fd !important;
+}
+
+html.dark .bg-green-100 {
+  background-color: rgba(34, 197, 94, 0.2) !important;
+  color: #86efac !important;
+}
+
+html.dark .bg-red-100 {
+  background-color: rgba(239, 68, 68, 0.2) !important;
+  color: #fca5a5 !important;
+}
+
+html.dark .bg-yellow-100 {
+  background-color: rgba(245, 158, 11, 0.2) !important;
+  color: #fde047 !important;
+}
+
+html.dark .text-green-700 {
+  color: #86efac !important;
+}
+
+html.dark .text-red-700 {
+  color: #fca5a5 !important;
+}
+
+html.dark .text-yellow-700 {
+  color: #fde047 !important;
+}
+
+html.dark .text-blue-300 {
+  color: #93c5fd !important;
+}
+
+html.dark .text-green-300 {
+  color: #86efac !important;
+}
+
+html.dark .text-red-300 {
+  color: #fca5a5 !important;
+}
+
+html.dark .text-yellow-300 {
+  color: #fde047 !important;
+}
+
+html.dark .text-purple-300 {
+  color: #BA68C8 !important;
+}
+
+/* Classes específicas para variantes do modo escuro */
+html.dark .bg-blue-900\/30 {
+  background-color: rgba(30, 58, 138, 0.3) !important;
+  color: #93c5fd !important;
+}
+
+html.dark .bg-green-900\/30 {
+  background-color: rgba(20, 83, 45, 0.3) !important;
+  color: #86efac !important;
+}
+
+html.dark .bg-red-900\/30 {
+  background-color: rgba(127, 29, 29, 0.3) !important;
+  color: #fca5a5 !important;
+}
+
+html.dark .bg-yellow-900\/30 {
+  background-color: rgba(120, 53, 15, 0.3) !important;
+  color: #fde047 !important;
+}
+
+/* Outras regras CSS continuam aqui */
+.dark table,
+.dark thead,
+.dark tbody,
+.dark tr,
+.dark th,
+.dark td {
+  color: #e2e8f0 !important;
+}
+
+.dark th {
+  color: #93c5fd !important;
+}
+
+/* Force color inheritance for nested elements */
+.dark .bg-blue-50 *,
+.dark .bg-blue-100 * {
+  color: #93c5fd !important;
+}
+
+.dark .bg-green-100 * {
+  color: #86efac !important;
+}
+
+.dark .bg-yellow-100 * {
+  color: #fde047 !important;
+}
+
+.dark .bg-red-100 * {
+  color: #fca5a5 !important;
+}
+
+.dark .bg-gray-100 * {
+  color: #d1d5db !important;
+}
+
+/* Input and form elements */
+.dark input,
+.dark textarea,
+.dark select {
+  color: #f1f5f9 !important;
+  background: #334155 !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+::-webkit-scrollbar {
+  height: 8px;
+  background: #f3f6fa;
+}
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
+
+.sidebar-kanban {
+  background: #fff;
+  border-right: 2px solid #e0e7ef;
+  box-shadow: 2px 0 8px 0 #0001;
+  color: #2563eb;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 220px;
+  min-width: 180px;
+  height: calc(100vh - 64px);
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  transition: width 0.2s, min-width 0.2s;
+  min-height: 100vh;
+}
+.main-with-sidebar {
+  margin-left: 220px;
+  margin-top: 64px;
+  transition: margin-left 0.2s;
+  min-height: calc(100vh - 64px);
+  height: calc(100vh - 64px);
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.dark .dark .navbar-geraldo {
+  background: #1e293b !important;
+  border-bottom: 2px solid #334155 !important;
+}
+
+.dark .navbar-geraldo-title {
+  color: #60a5fa !important;
+}
+
+.dark .navbar-geraldo-sub {
+  color: #94a3b8 !important;
+}
+
+.dark .navbar-geraldo-avatar {
+  background: #334155 !important;
+}
+
+.dark .sidebar-kanban {
+  background: #1e293b !important;
+  border-right: 2px solid #334155 !important;
+  color: #60a5fa !important;
+}
+
+.dark .sidebar-title {
+  color: #60a5fa !important;
+}
+
+.dark .sidebar-link {
+  color: #94a3b8 !important;
+}
+
+.dark .sidebar-link:hover,
+.dark .sidebar-link.active {
+  background: #334155 !important;
+  color: #e2e8f0 !important;
+}
+
+/* Kanban específico */
+.dark .kanban-column {
+  background: #334155 !important;
+  border-color: #475569 !important;
+}
+
+.dark .kanban-column.is-over {
+  background: #475569 !important;
+  border-color: #60a5fa !important;
+}
+
+.dark .pedido-card {
+  background: #1e293b !important;
+  border-color: #475569 !important;
+  color: #e2e8f0 !important;
+}
+
+.dark .pedido-card:hover {
+  background: #334155 !important;
+  color: #f1f5f9 !important;
+}
+
+.dark .pedido-card .text-gray-500 {
+  color: #94a3b8 !important;
+}
+
+.dark .pedido-card .text-gray-700 {
+  color: #cbd5e1 !important;
+}
+
+.dark .sidebar-kanban {
+  background: #232a3a !important;
+  border-right: 2px solid #334155 !important;
+  color: #60a5fa !important;
+}
+
+.sidebar-title {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #2563eb;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.05em;
+  text-shadow: none;
+}
+.dark .sidebar-title {
+  color: #60a5fa !important;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 0.7rem;
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  box-shadow: none;
+}
+.dark .sidebar-link {
+  color: #93c5fd !important;
+}
+.sidebar-link:hover, .sidebar-link.active {
+  background: #e0e7ef;
+  color: #1d4ed8;
+  box-shadow: none;
+}
+.dark .sidebar-link:hover, .dark .sidebar-link.active {
+  background: #334155 !important;
+  color: #fff !important;
+}
+
+.sidebar-icon {
+  font-size: 1.3rem;
+  width: 1.8rem;
+  text-align: center;
+  filter: none;
+  color: inherit !important;
+}
+.sidebar-hide-bottom-btn {
+  display: none !important;
+}
+
+/* Estilos para Modal e Produtos */
+.modal-overlay {
+  backdrop-filter: blur(4px);
+}
+
+/* Animações para o modal */
+.modal-content {
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Hover effects para botões de ação */
+.action-button {
+  transition: all 0.2s ease;
+}
+
+.action-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsividade para tabela de produtos */
+@media (max-width: 768px) {
+  .produtos-table {
+    font-size: 0.875rem;
+  }
+  
+  .produtos-table th,
+  .produtos-table td {
+    padding: 0.75rem 0.5rem;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  
+  .action-buttons button {
+    font-size: 0.75rem;
+    padding: 0.375rem 0.75rem;
+  }
+}
+
+/* Dark mode específico para produtos */
+html.dark .produtos-table {
+  border-color: #374151;
+}
+
+html.dark .produtos-table tbody tr:hover {
+  background-color: rgba(55, 65, 81, 0.3);
+}
+
+html.dark .modal-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Estilos para inputs do modal */
+.form-input {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+html.dark .form-input {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #f3f4f6;
+}
+
+html.dark .form-input:focus {
+  border-color: #60a5fa;
+  box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1);
+}
+
+/* Estilos para select */
+.form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 0.5rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em 1.5em;
+  padding-right: 2.5rem;
+}
+
+html.dark .form-select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%9ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+}
+
+@media (max-width: 1200px) {
+  .main-with-sidebar {
+    margin-left: 180px;
+  }
+  .sidebar-kanban {
+    width: 180px;
+    min-width: 140px;
+  }
+}
+@media (max-width: 900px) {
+  .sidebar-kanban {
+    width: 60px;
+    min-width: 60px;
+  }
+  .main-with-sidebar {
+    margin-left: 60px;
+  }
+  .sidebar-title, .sidebar-label {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .navbar-geraldo-content {
+    padding: 0 0.5rem;
+  }
+  .navbar-geraldo-title, .navbar-geraldo-sub {
+    font-size: 1rem;
+  }
+  .sidebar-kanban {
+    width: 48px;
+    min-width: 48px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .main-with-sidebar {
+    margin-left: 48px;
+    margin-top: 56px;
+  }
+}
+@media (max-width: 400px) {
+  .navbar-geraldo-content {
+    padding: 0 0.2rem;
+  }
+  .sidebar-kanban {
+    width: 36px;
+    min-width: 36px;
+  }
+  .main-with-sidebar {
+    margin-left: 36px;
+  }
+}
+html, body, #root {
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+/* Estilos para imagens dos produtos */
+.produto-imagem {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.produto-imagem:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.dark .produto-imagem:hover {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+/* Estilo para preview de imagem no modal */
+.preview-imagem {
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  display: inline-block;
+}
+
+.preview-imagem::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  border-radius: 0.5rem;
+}
+
+.preview-imagem:hover::before {
+  opacity: 1;
+}
+
+/* Estilo para input de arquivo personalizado */
+.file-input-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+.file-input-wrapper input[type="file"] {
+  position: absolute;
+  left: -9999px;
+}
+
+.file-input-label {
+  border: 2px dashed #d1d5db;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  background: #f9fafb;
+}
+
+.dark .file-input-label {
+  border-color: #4b5563;
+  background: #374151;
+}
+
+.file-input-label:hover {
+  border-color: #3b82f6;
+  background: #eff6ff;
+}
+
+.dark .file-input-label:hover {
+  border-color: #60a5fa;
+  background: #1e3a8a;
+}
+
+/* Estilos específicos para página de Histórico */
+.historico-status-badge {
+  transition: all 0.2s ease-in-out;
+}
+
+.historico-status-badge:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+/* Melhorias para inputs de data no modo escuro */
+.dark input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  opacity: 0.8;
+}
+
+.dark input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+/* Melhorias para select no modo escuro */
+.dark select {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23ffffff' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px;
+  appearance: none;
+}
+
+/* Hover effects para tabela de histórico */
+.historico-table-row {
+  transition: all 0.15s ease-in-out;
+}
+
+.historico-table-row:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dark .historico-table-row:hover {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+}
+
+/* Estilos para campos de busca com ícones */
+.search-input-wrapper {
+  position: relative;
+}
+
+.search-input-wrapper::before {
+  content: "🔍";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+}
+
+.search-input-with-icon {
+  padding-left: 40px;
+}
+
+/* Estilos específicos para página de Clientes */
+.cliente-avatar {
+  transition: all 0.2s ease-in-out;
+}
+
+.cliente-avatar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.dark .cliente-avatar:hover {
+  box-shadow: 0 4px 12px rgba(96, 165, 250, 0.2);
+}
+
+/* Efeitos hover para botões de ação dos clientes */
+.cliente-action-button {
+  transition: all 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.cliente-action-button:hover {
+  transform: translateY(-1px);
+}
+
+.cliente-action-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.cliente-action-button:hover::before {
+  left: 100%;
+}
+
+/* Cards de estatísticas dos clientes */
+.cliente-stats-card {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.cliente-stats-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.dark .cliente-stats-card:hover {
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.05);
+}
+
+/* Animação para números nas estatísticas */
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cliente-stat-number {
+  animation: countUp 0.6s ease-out;
+}
+
+/* Melhorias para campo de busca de clientes */
+.cliente-search-wrapper {
+  position: relative;
+  max-width: 400px;
+}
+
+.cliente-search-wrapper::before {
+  content: "👤";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.6;
+  font-size: 16px;
+}
+
+.cliente-search-input {
+  padding-left: 40px;
+  transition: all 0.2s ease-in-out;
+}
+
+.cliente-search-input:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Responsividade específica para clientes */
+@media (max-width: 768px) {
+  .cliente-stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+  
+  .cliente-action-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .cliente-action-button {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
